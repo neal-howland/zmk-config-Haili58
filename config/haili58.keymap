@@ -2,23 +2,23 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        lsft_capword: lsft_capword {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LSFT>, <&caps_word>;
+        };
+        rsft_capword: rsft_capword {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RSFT>, <&caps_word>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
-
-        behaviors {
-            lsft_capword: lsft_capword {
-                compatible = "zmk,behavior-tap-dance";
-                #binding-cells = <0>;
-                tapping-term-ms = <200>;
-                bindings = <&kp LSFT>, <&caps_word>;
-            };
-            rsft_capword: rsft_capword {
-                compatible = "zmk,behavior-tap-dance";
-                #binding-cells = <0>;
-                tapping-term-ms = <200>;
-                bindings = <&kp RSFT>, <&caps_word>;
-            };
-        };
 
         default_layer {
             display-name = "Base";
