@@ -5,7 +5,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-/*        behaviors {
+        behaviors {
             lsft_capword: lsft_capword {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
@@ -19,7 +19,6 @@
                 bindings = <&kp RSFT>, <&caps_word>;
             };
         };
-*/
 
         default_layer {
             display-name = "Base";
@@ -27,8 +26,8 @@
 &kp GRAVE                 &kp N1    &kp N2    &kp N3    &kp N4  &kp N5          &kp N6  &kp N7   &kp N8     &kp N9   &kp N0     &kp EQL
 &mt LS(LC(LA(LGUI))) TAB  &kp Q     &kp W     &kp E     &kp R   &kp T           &kp Y   &kp U    &kp I      &kp O    &kp P      &kp MINUS
 &mt LCTL ESC              &kp A     &kp S     &kp D     &kp F   &kp G           &kp H   &kp J    &kp K      &kp L    &kp SEMI   &kp APOS
-&kp LSFT              &kp Z     &kp X     &kp C     &kp V   &kp B           &kp N   &kp M    &kp COMMA  &kp DOT  &kp FSLH   &kp RSFT
-&mt LCTL ESC &mt LALT BKSP &mt LGUI SPACE  &lt 1 ENTER &kp LC(LA(LGUI)) &studio_unlock   &studio_unlock &kp RC(RA(RGUI)) &lt 1 ENTER  &mt RGUI SPACE &mt RALT BKSP &mt RCTL ESC
+&lsft_capword             &kp Z     &kp X     &kp C     &kp V   &kp B           &kp N   &kp M    &kp COMMA  &kp DOT  &kp FSLH   &rsft_capword
+&mt LCTL BKSP &mt LALT SPACE &mt LGUI ENTER  &lt 1 ESC &kp LC(LA(LGUI)) &studio_unlock   &studio_unlock &kp RC(RA(RGUI)) &lt 1 ESC  &mt RGUI ENTER &mt RALT SPACE &mt RCTL BKSP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp UP DOWN>;
@@ -37,9 +36,9 @@
         layer_1 {
             bindings = <
 &trans       &kp F1   &kp F2   &kp F3   &kp F4   &kp F5           &kp F6   &kp F7    &kp F8    &kp F9     &kp F10  &trans
-&trans       &kp F6   &kp F7   &kp F8   &kp F9   &kp F10          &kp HOME &kp PGDN  &kp PGDN  &kp END    &trans   &kp BSLH
+&trans       &kp F6   &kp F7   &kp F8   &kp F9   &kp F10          &kp HOME &kp PGDN  &kp PGDN  &kp END    &trans   &trans
 &trans       &kp F11  &kp F12  &kp F13  &kp F14  &kp F15          &kp LEFT &kp DOWN  &kp UP    &kp RIGHT  &trans   &trans
-&trans       &kp LBKT &kp RBKT &kp LBRC &kp RBRC &kp BSLH         &kp LBKT &kp RBKT  &kp LBRC  &kp RBRC   &trans   &trans
+&trans       &kp LBKT &kp RBKT &kp LBRC &kp RBRC &kp BSLH         &kp LBKT &kp RBKT  &kp LBRC  &kp RBRC   &kp BSLH &trans
 &trans       &trans   &trans   &trans  &trans  &trans             &trans   &trans    &trans    &trans     &trans   &trans
             >;
         };
